@@ -25,5 +25,4 @@ then in script.js replace the Starry Night image property with 'images/starry-ni
 If you have a local photo, always verify it actually shows the intended artwork before using it.
 
 AI DISCLOSURE
-Initial implementation was generated with AI; update the artwork research, copy and REAL AI
-rating for this artifact before publishing.
+Initial implementation was generated with AI; real AI Rating 2
