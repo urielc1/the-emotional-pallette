@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Artworks — The Emotional Pallette</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <style>
+    .student-notes { padding-top: 64px; padding-bottom: 70px; }
+    .student-notes h2 { margin: 14px 0 28px; }
+    .student-note {
+      border-top: 1px solid #bfbcb5;
+      padding: 28px 0;
+      display: grid;
+      grid-template-columns: minmax(160px, 1fr) minmax(0, 2fr);
+      gap: 30px;
+    }
+    .student-note h3 { margin: 7px 0; font-size: clamp(27px, 3vw, 40px); }
+    .student-note .writing-box {
+      background: #f1efe9;
+      border-left: 2px solid #a34827;
+      padding: 22px 25px;
+    }
+    .student-note .writing-box p { margin: 0 0 15px; line-height: 1.7; }
+    .student-note .writing-box p:last-child { margin-bottom: 0; }
+    .student-note .writing-box strong { color: #a34827; font-weight: 500; }
+    @media (max-width: 720px) {
+      .student-note { grid-template-columns: 1fr; gap: 16px; }
+    }
+  </style>
+</head>
+<body data-page="explore">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="The Emotional Pallette home">the emotional<span class="wordmark-line">pallette<span class="wordmark-period">.</span></span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="explore.html" aria-current="page">Explore artworks</a>
+      <a href="research.html">The research</a>
+      <a href="sources.html">Sources & credits</a>
+    </nav>
+    <a class="nav-index" href="#experience">EXPLORE / 01 ↗</a>
+  </header>
+
+  <main id="main">
+    <section class="page-intro section-frame">
+      <span class="small-label">01 / INTERACTIVE GALLERY</span>
+      <h1>Look first.<br><em>Interpret second.</em></h1>
+      <p>Look at each painting and choose the feeling closest to your first impression. There is no single correct response.</p>
+    </section>
+
+    <!-- Do not rename the IDs in this gallery. script.js uses them. -->
+    <section class="experience section-frame" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <span class="small-label">THE LOOKING ROOM / 01—03</span>
+        <h2 id="experience-title">Take a closer look<span class="accent-dot">.</span></h2>
+      </div>
+      <div class="experience-shell">
+        <div class="experience-art">
+          <div class="image-slot">
+            <img id="painting-image" src="" alt="" referrerpolicy="no-referrer">
+            <div class="image-fallback" id="painting-fallback" hidden>
+              <span>IMAGE PREVIEW UNAVAILABLE</span>
+              <p>Use the artwork source link below to view the original.</p>
+            </div>
+          </div>
+          <div class="art-caption">
+            <span id="painting-caption"></span>
+            <a id="painting-source" href="sources.html" target="_blank" rel="noopener noreferrer">VIEW SOURCE ↗</a>
+          </div>
+        </div>
+        <div class="experience-panel">
+          <div class="panel-top">
+            <span class="small-label">A CLOSE LOOK</span>
+            <span class="small-label" id="progress-count">01 / 03</span>
+          </div>
+          <div class="panel-title">
+            <p class="maker" id="work-maker"></p>
+            <h3 id="work-title"></h3>
+            <p class="work-date" id="work-date"></p>
+          </div>
+          <div class="question-block">
+            <span class="small-label">YOUR FIRST IMPRESSION</span>
+            <h4>What stays<br><em>with you?</em></h4>
+            <p>Choose one. It doesn't have to be definitive.</p>
+            <div id="emotion-options" class="emotion-options" role="group" aria-label="Choose your emotional response"></div>
+          </div>
+          <div id="reflection" class="reflection" aria-live="polite" hidden>
+            <span class="small-label">A POSSIBLE READING / NOT A DIAGNOSIS</span>
+            <p id="reflection-text"></p>
+            <button id="context-trigger" class="reveal-link" type="button">SHOW THE HISTORICAL CONTEXT <span aria-hidden="true">+</span></button>
+            <div id="context" hidden>
+              <p id="context-text"></p>
+              <p><a href="#student-interpretations">READ OUR OWN ARTWORK INTERPRETATIONS ↗</a></p>
+            </div>
+          </div>
+          <div class="panel-controls">
+            <button id="previous" class="control-previous" type="button">← PREVIOUS</button>
+            <span class="progress-rule" aria-hidden="true"><span id="progress-bar"></span></span>
+            <button id="next" class="control-next" type="button" disabled>NEXT WORK ↗</button>
+          </div>
+        </div>
+      </div>
+      <p class="under-gallery">Artwork comes first. Interpretation is offered second. Neither erases the other.</p>
+    </section>
+
+    <!-- FILLED IN INTERPRETATION SECTIONS -->
+    <section id="student-interpretations" class="student-notes section-frame" aria-labelledby="notes-title">
+      <span class="small-label">02 / YOUR VOICE</span>
+      <h2 id="notes-title">Our interpretations<span class="accent-dot">.</span></h2>
+
+      <article class="student-note">
+        <div>
+          <span class="small-label">01 / VINCENT VAN GOGH</span>
+          <h3>The Starry Night</h3>
+        </div>
+        <div class="writing-box">
+          <p><strong>[OBSERVATION]</strong> I notice the thick, swirling bands of cobalt and ultramarine blue sweeping across the night sky, punctuated by glowing yellow haloes around the stars and crescent moon, while a dark cypress tree rises sharply in the foreground.</p>
+          <p><strong>[EMOTION]</strong> This makes me feel a mix of restless awe and quiet wonder because the turbulent brushstrokes make the night feel alive and constantly in motion rather than still or empty.</p>
+          <p><strong>[INTERPRETATION]</strong> Another viewer might feel uneasy or overwhelmed instead because the relentless movement of the sky and the shadowy, towering cypress can read as emotional turbulence rather than peaceful stargazing.</p>
+        </div>
+      </article>
+
+      <article class="student-note">
+        <div>
+          <span class="small-label">02 / CLAUDE MONET</span>
+          <h3>Bridge over a Pond of Water Lilies</h3>
+        </div>
+        <div class="writing-box">
+          <p><strong>[OBSERVATION]</strong> I notice the arched green Japanese footbridge spanning across a dense tapestry of layered greens, soft pinks, and dappled reflections of willow branches on the pond's surface.</p>
+          <p><strong>[EMOTION]</strong> This makes me feel grounded and calm because the lush, overlapping shades of green mirror the quiet relief of stepping into a shaded garden on a warm afternoon.</p>
+          <p><strong>[INTERPRETATION]</strong> This setting could also suggest nostalgia or gentle solitude to another visitor because the blurred, painterly edges make the scene feel like a fading memory rather than a crisp physical place.</p>
+        </div>
+      </article>
+
+      <article class="student-note">
+        <div>
+          <span class="small-label">03 / KATSUSHIKA HOKUSAI</span>
+          <h3>The Great Wave off Kanagawa</h3>
+        </div>
+        <div class="writing-box">
+          <p><strong>[OBSERVATION]</strong> I notice the towering crest of Prussian blue water curling into sharp, foaming waves above three narrow wooden boats, while a small, snowy Mount Fuji sits completely still in the background.</p>
+          <p><strong>[EMOTION]</strong> This makes me feel tense yet strangely steady because the sheer scale of the curling wave creates immediate suspense, even as the distant mountain anchors the horizon.</p>
+          <p><strong>[INTERPRETATION]</strong> The contrast between the chaotic, surging blue wave and the unmoving silhouette of Mount Fuji might suggest the resilience of nature, or remind viewers how fragile human effort is when measured against the ocean.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="your-palette" class="result-section section-frame" aria-labelledby="results-title" hidden>
+      <div class="section-rail"><span class="index">III.</span><span>YOUR RESPONSES</span></div>
+      <div class="results-head">
+        <h2 id="results-title">Three works.<br><em>Three encounters.</em></h2>
+        <p>Look at your choices side by side. Which piece surprised you?</p>
+      </div>
+      <div id="results-grid" class="results-grid"></div>
+      <div class="results-foot">
+        <p>Similar colors do not guarantee similar feelings. Subject, composition, context, and personal experience may all play a role.</p>
+        <button id="restart" class="reveal-link" type="button">BEGIN AGAIN ↗</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <a class="footer-brand" href="index.html">the emotional pallette<span>.</span></a>
+    <p>A SMALL EXERCISE IN LOOKING / 2026</p>
+    <a href="index.html">BACK HOME ↑</a>
+  </footer>
+</body>
+</html>
