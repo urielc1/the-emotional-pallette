@@ -16,13 +16,5 @@ HOW TO EDIT IN VISUAL STUDIO CODE
 8. Open styles.css to edit layout, typography, and colors.
 9. Save Ctrl+S and refresh the browser Ctrl+R.
 
-IMAGE FIX
-The incorrect 'Starry_Night.jpg' reference was replaced with a Wikimedia Commons file page titled
-'Van Gogh - Starry Night - Google Art Project.jpg'. Images are still remote and need internet.
-For a reliable local image: download the verified image from Wikimedia Commons to an 'images' folder,
-then in script.js replace the Starry Night image property with 'images/starry-night.jpg'.
-
-If you have a local photo, always verify it actually shows the intended artwork before using it.
-
 AI DISCLOSURE
 Initial implementation was generated with AI; real AI Rating 2
